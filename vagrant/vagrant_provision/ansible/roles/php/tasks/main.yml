@@ -21,10 +21,6 @@
 - name: Create folder for ssl certificate
   file: path=/etc/apache2/ssl state=directory
 
-- name: Copy ssl certificate
-  copy: src=devnet-certificates/ dest=/etc/apache2/ssl/ directory_mode=yes force=yes
-  notify: restart apache
-
 - name: Delete default host
   notify: restart apache
   file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
