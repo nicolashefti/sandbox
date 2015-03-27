@@ -1,0 +1,9 @@
+---
+- name: Provision tasks
+  hosts: all
+  sudo: true
+  roles:
+    - common
+    - mongodb
+    - php
+

@@ -1,0 +1,16 @@
+---
+- name: Add mongoDb key
+  apt_key: id=7F0CEB10 url=http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x7F0CEB10
+
+- name: add mongodb repository
+  apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'
+  register: mongorepo
+
+- apt: update_cache=yes
+  when: mongorepo.changed
+
+- name: Install mongodb
+  apt: pkg={{ item }} state=present
+  with_items:
+  - mongodb-org-server
+  - mongodb-org-shell

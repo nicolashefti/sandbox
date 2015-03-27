@@ -1,0 +1,74 @@
+---
+- name: Install php packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - php5
+  - php5-dev
+  - php5-mysql
+
+- name: Copy host template
+  template: src=myvhost.conf.tpl dest=/etc/apache2/sites-enabled/myvhost.conf
+  notify: restart apache
+
+- name: Enable mod rewrite
+  apache2_module: state=present name=rewrite
+  notify: restart apache
+
+- name: Enable mod ssl
+  apache2_module: state=present name=ssl
+  notify: restart apache
+
+- name: Create folder for ssl certificate
+  file: path=/etc/apache2/ssl state=directory
+
+- name: Copy ssl certificate
+  copy: src=devnet-certificates/ dest=/etc/apache2/ssl/ directory_mode=yes force=yes
+  notify: restart apache
+
+- name: Delete default host
+  notify: restart apache
+  file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
+
+- name: Add timezone to apache php.ini
+  notify: restart apache
+  lineinfile:
+    dest: /etc/php5/apache2/php.ini
+    state: present
+    line: date.timezone="Europe/Berlin"
+
+- name: Add timezone to cli php.ini
+  lineinfile:
+    dest: /etc/php5/cli/php.ini
+    state: present
+    line: date.timezone="Europe/Berlin"
+
+- name: Download mongodb driver
+  get_url: dest=/tmp/mongo-1.5.5.tgz url=http://pecl.php.net/get/mongo-1.5.5.tgz
+
+- name: Unpack mongodb driver
+  unarchive: src=/tmp/mongo-1.5.5.tgz dest=/tmp copy=no creates=/tmp/mongo-1.5.5/mongo.c
+
+- name: Compile mongodb php extension 1/3
+  command: /usr/bin/phpize chdir=/tmp/mongo-1.5.5/ creates=/tmp/mongo-1.5.5/configure
+
+- name: Compile mongodb php extension 2/3
+  command: ./configure chdir=/tmp/mongo-1.5.5/ creates=/tmp/mongo-1.5.5/Makefile
+
+- name: Compile mongodb php extension 3/3
+  command: make chdir=/tmp/mongo-1.5.5/ creates=/tmp/mongo-1.5.5/modules/mongo.so
+
+- name: Copy mongodb php extension
+  command: cp -f /tmp/mongo-1.5.5/modules/mongo.so /usr/lib/php5/20121212/mongo.so creates=/usr/lib/php5/20121212/mongo.so
+
+- name: Add mongo driver to apache php.ini
+  notify: restart apache
+  lineinfile:
+    dest: /etc/php5/apache2/php.ini
+    state: present
+    line: extension=mongo.so
+
+- name: Add mongo driver to cli php.ini
+  lineinfile:
+    dest: /etc/php5/cli/php.ini
+    state: present
+    line: extension=mongo.so

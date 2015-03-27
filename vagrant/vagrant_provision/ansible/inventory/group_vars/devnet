@@ -1,0 +1,4 @@
+---
+install_path: /srv/www/trexdeployer
+host_name: trex-deployer.dev.devnet.traveltrex.local
+deploy_environment: devnet

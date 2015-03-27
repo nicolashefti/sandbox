@@ -1,0 +1,66 @@
+# Path to your oh-my-zsh configuration.
+ZSH=~/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="xiong-chiamiov-plus"
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+ COMPLETION_WAITING_DOTS="true"
+ 
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git git-flow colored-man history-substring-search ruby gem npm ant sudo safe-paste)
+
+source $ZSH/oh-my-zsh.sh
+
+# workaround for history substring searhc https://github.com/robbyrussell/oh-my-zsh/issues/1433
+bindkey '\e[A' history-substring-search-up
+bindkey '\e[B' history-substring-search-down
+
+setopt append_history
+setopt share_history
+setopt extended_history
+setopt histignorealldups
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+
+setopt auto_cd
+setopt hash_list_all
+alias ...='cd ../../'
+
+# Prefer US English and use UTF-8
+export LANG="en_US"
+export LC_ALL="en_US.UTF-8"
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+export EDITOR=vim
+
+# Always enable colored `grep` output
+export GREP_OPTIONS="--color=auto"
+
+# Do not autocorrect "git log"
+alias git="nocorrect git"

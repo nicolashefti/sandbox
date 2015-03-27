@@ -1,0 +1,4 @@
+---
+install_path: /srv/www/trexdeployer
+host_name: trex-deployer.live.snowtrex.cluster
+deploy_environment: live
