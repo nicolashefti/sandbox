@@ -12,20 +12,12 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/development.log',
 ));
 
-$app['monolog']->addDebug('Testing the Monolog logging.');
-
 $app->get('/', function() use($app) { 
-    return $app['twig']->render('home.twig', array(
-        'message' => 'Hello word',
-    ));
-}); 
-
-$app->get('/bonjour', function() use($app) { 
-    return 'Bonjour Nicolas'; 
+    return $app['twig']->render('home.twig');
 }); 
 
 $app->get('/hello/{name}', function ($name) use ($app) {
-    return $app['twig']->render('index.twig', array(
+    return $app['twig']->render('hello.twig', array(
         'name' => $name,
     ));
 });
