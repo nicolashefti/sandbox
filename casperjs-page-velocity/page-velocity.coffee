@@ -6,7 +6,7 @@ casper = require('casper').create
 # To calculate load time
 start = 0
 end = 0
-iterations = casper.cli.get('it') | 10
+iterations = casper.cli.get('it') || 10
 loadTimes = []
 domElements = []
 page = casper.cli.get('page')
@@ -43,4 +43,8 @@ casper.then ->
 casper.run()
 
 
-
+# Overwritten casperjs function, until the bug https://github.com/n1k0/casperjs/pull/1024 is solved
+casper.page.onResourceRequested = (requestData, request) ->
+  casper.emit "resource.requested", requestData, request
+  casper.emit "page.resource.requested", requestData, request  if utils.decodeUrl(requestData.url) is casper.requestUrl
+  casper.options.onResourceRequested.call casper, casper, requestData, request  if utils.isFunction(casper.options.onResourceRequested)
