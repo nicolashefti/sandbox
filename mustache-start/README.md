@@ -1,7 +1,7 @@
 Mustache Start
 ==============
 
-In 2014, France sent to the Eurovision song contest a group singing called "Moustache". France ended up last of the contest. This repo has no about this story.
+In 2014, France sent to the Eurovision a group called "Twin Twin" singing "Moustache". France ended up last of the contest. This repo is not about this epic fail.
 
 [mustache.js](http://github.com/janl/mustache.js) is an implementation of the [mustache](http://mustache.github.com/) template system in JavaScript.
 
