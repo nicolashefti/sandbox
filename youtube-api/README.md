@@ -2,7 +2,7 @@
 
 > "The IFrame player API lets you embed a YouTube video player on your website and control the player using JavaScript."
 
-This example covers basic usage of the Player API as described in the documentation. With a bit of *material design*, you
+This example covers basic usages of the Player API as described in the documentation. With a bit of *material design*, you
 already feel like home.
 
 Resource:
