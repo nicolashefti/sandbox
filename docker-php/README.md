@@ -19,3 +19,7 @@ docker-compose up
 
 Docker will create the image corresponding to the Dockerfile. Then it will use the configuration in 
 docker-compose.yml to setup a container with the image.
+
+## Docker cheat sheet
+
+`docker exec -it container_id /bin/bash`, open a terminal session in the container
