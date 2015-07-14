@@ -1,10 +1,13 @@
 # Docker container for PHP application
 
-Basic container for running Apache, PHP and xDebug. Ready to develop!
+Basic container running Apache, PHP and xDebug. Ready to develop your webapplication!
 
 ## Pre-request
 
-Docker install and running on your machine.
+Docker and Docker Compose installed and running on your machine. More information here:
+
+- [Install Docker](http://docs.docker.com/installation/ubuntulinux/)
+- [Install Docker Compose](http://docs.docker.com/compose/install)
 
 ## Installation
 
