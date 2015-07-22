@@ -1,10 +1,13 @@
 # Docker container for PHP application
 
-Basic container for running Apache, PHP and xDebug. Ready to develop!
+Basic container running Apache, PHP and xDebug. Ready to develop your webapplication!
 
 ## Pre-request
 
-Docker installed and running on your machine.
+Docker and Docker Compose installed and running on your machine. More information here:
+
+- [Install Docker](http://docs.docker.com/installation/ubuntulinux/)
+- [Install Docker Compose](http://docs.docker.com/compose/install)
 
 ## Installation
 
@@ -19,18 +22,10 @@ docker-compose.yml to setup a container with the image.
 
 ## Cheat sheet
 
-Open bash in the container of your choice:
+`docker exec -it container_id /bin/bash`, opens a terminal session in the container
 
-```
-docker exec -it container_name bash
-```
+`eval "$(boot2docker shellinit)"`, exports boot2docker environment variables (MacOs)
 
-For MacOs users, export boot2docker environment variables
 
-```
-eval "$(boot2docker shellinit)" 
-```
 
-## Ressources
 
-- [Docker compose documentation](https://docs.docker.com/compose/)
