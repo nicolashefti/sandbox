@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Autocomplete - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var availableTags = [
+                "ActionScript More useless super long text... bla bla bla bla bla",
+                "AppleScript More useless super long text... bla bla bla bla bla",
+                "Asp More useless super long text... bla bla bla bla bla",
+                "BASIC More useless super long text... bla bla bla bla bla",
+                "C More useless super long text... bla bla bla bla bla",
+                "C++ More useless super long text... bla bla bla bla bla",
+                "Clojure More useless super long text... bla bla bla bla bla",
+                "COBOL More useless super long text... bla bla bla bla bla",
+                "ColdFusion More useless super long text... bla bla bla bla bla",
+                "Erlang More useless super long text... bla bla bla bla bla",
+                "Fortran More useless super long text... bla bla bla bla bla",
+                "Groovy More useless super long text... bla bla bla bla bla",
+                "Haskell More useless super long text... bla bla bla bla bla",
+                "Java More useless super long text... bla bla bla bla bla",
+                "JavaScript More useless super long text... bla bla bla bla bla"
+            ];
+            $("#tags").autocomplete({
+                source: availableTags,
+                position: {
+                    my: 'right top',
+                    at: 'right bottom',
+                    collision: 'flip'
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="ui-widget">
+    <p>Autocomplete implementation. Test how this behave if you change the position{} option.</p>
+    <p>Try starting with "bla".</p>
+    <label for="tags">Tags: </label>
+    <input id="tags">
+</div>
+</body>
+</html>
