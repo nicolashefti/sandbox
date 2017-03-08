@@ -1,0 +1,22 @@
+{
+  "name": "ps-rxjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --watch --inline",
+    "postinsall": "typings install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^5.2.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.0.1",
+    "typescript": "^2.2.1",
+    "typings": "^2.1.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
