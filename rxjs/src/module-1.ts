@@ -1,16 +1,15 @@
 /**
  * Code state after module 1
  */
-
 // Limit the size of bundle by loading just what is needed!
-import {Observable} from "rxjs/Observable";
-import {Observer} from "rxjs/Observer";
-import "rxjs/add/observable/from";
-import "rxjs/add/operator/map";
-import "rxjs/add/operator/filter";
+// import {Observable} from "rxjs/Observable";
+// import {Observer} from "rxjs/Observer";
+// import "rxjs/add/observable/from";
+// import "rxjs/add/operator/map";
+// import "rxjs/add/operator/filter";
 
 // Import everything (easier for development)
-// import {Observable, Observer} from "rxjs";
+import {Observable, Observer} from "rxjs";
 
 let numbers = [1, 5, 10];
 let source = Observable.from(numbers);
@@ -71,3 +70,12 @@ newSource.subscribe(
         console.log(`complete`)
     }
 );
+
+// flatMap operator
+// let letters = Observable.from(['a', 'b', 'c']);
+//
+// let result = letters.flatMap(
+//     x => Observable.interval(2000).map(i => x + i)
+// );
+//
+// result.subscribe(x => console.log(x));
