@@ -6,4 +6,5 @@ The motto: minimal amount of code to create the first "sparks".
 
 ## Frontend
 
-[RxJS](rxjs)
+- [RxJS](rxjs)
+- [Github page test](test), playing around with Github page configuration.
