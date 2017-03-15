@@ -1,7 +1,7 @@
 ---
 title: Dummy page
 layout: default
-permalink: /test
+permalink: /test/
 ---
 
 # Test - Dummy folder
