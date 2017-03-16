@@ -24,8 +24,6 @@ Jekyll docs:
 
 When you use permalinks that omit the .html file extension (called “pretty URLs”) Jekyll builds the file as index.html placed inside a folder with the page’s name.
 
-# Linking to .md files that become .html file?
+# Linking markdown .md files that become .html file?
 
-[Test]({{ site.baseurl }}{% link ./test.md %})
 
-{{ site.baseurl }}{% link ./test.md %}

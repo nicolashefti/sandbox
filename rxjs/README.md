@@ -1,6 +1,9 @@
-# Getting Started with Reactive Programming Using RxJS
+---
+permalink: /rxjs/
+---
+# Reactive Programming Using RxJS
 
-## Resource
+## Resources
 
 [Getting Started with RXJS - PluralSight](https://app.pluralsight.com/library/courses/reactive-programming-rxjs-getting-started/table-of-contents)
 

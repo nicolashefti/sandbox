@@ -1,1 +1,17 @@
 theme: jekyll-theme-slate
+
+exclude:
+  - 'vendor'
+  - 'casperjs-page-velocity/node_modules'
+  - 'node_modules'
+  - 'phpunit'
+  - 'silex'
+  - 'web-component'
+  - 'youtube-api'
+  - 'golang'
+  - 'docker-php'
+  - '.bundle'
+  - '.idea'
+  - '_site'
+  - 'rxjs/node_modules'
+  - 'vagrant'
