@@ -3,6 +3,13 @@ permalink: /rxjs/
 ---
 # Reactive Programming Using RxJS
 
+## Basic examples
+
+[Mouse event tracking](./circle.html)
+
+- Observable from 'mousemove' Event. 
+- Observer set the position of ther circle to the position of your cursor using the *filter* and *delay* Operators.
+
 ## Resources
 
 [Getting Started with RXJS - PluralSight](https://app.pluralsight.com/library/courses/reactive-programming-rxjs-getting-started/table-of-contents)
