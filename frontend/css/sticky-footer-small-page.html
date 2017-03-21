@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky footer for small pages</title>
+    <style>
+        /** RESET **/
+        h1 {
+            margin-top: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /** LAYOUT **/
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-push {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            margin-bottom: -70px;
+        }
+
+        footer {
+            height: 70px;
+        }
+
+        .footer-pad {
+            height: 80px;
+        }
+
+        /**
+         * Visual styling, nothing to do with the purpose of the snippets
+         */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        main {
+            max-width: 850px;
+            margin: auto;
+            padding: 0 50px;
+            text-align: justify;
+        }
+
+        footer {
+            background: #faf6ec;
+            text-align: center;
+            padding: 10px;
+        }
+
+        p.lead {
+            font-size: 1.2em;
+        }
+
+        p.lorem {
+            color: #707070;
+        }
+    </style>
+</head>
+<body>
+<div class="footer-push">
+    <main id="main-content">
+        <h1>Main container</h1>
+        <p class="lead">The initial content is smaller than the display: the footer should stick to the page bottom.</p>
+        <p class="lead">If you add content and the page get longer than the display the footer should be pushed
+            down.</p>
+        <button onclick="addText()">Add more content</button>
+        <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a justo a urna aliquam
+            vulputate. In at ullamcorper ligula. Nunc efficitur tristique suscipit. Donec at tempus mi. Sed tempor leo a
+            lorem iaculis lobortis. Donec et volutpat lorem. Sed ex velit, egestas ut dolor eu, vestibulum maximus
+            mauris. Curabitur
+            lobortis elit id purus bibendum pulvinar. Etiam sapien ligula, feugiat non gravida ac, ornare eget lectus.
+            Nullam porta hendrerit diam. Fusce id justo hendrerit, imperdiet nisi nec, tincidunt justo.</p>
+
+        <p class="lorem">Donec bibendum ex ac orci efficitur, lacinia commodo neque rhoncus. Sed scelerisque aliquet
+            felis at sagittis. Aliquam erat volutpat. Nulla aliquet enim vitae nulla tincidunt gravida. Sed ac rutrum
+            arcu.
+            Pellentesque et condimentum elit. Duis nec velit consectetur, sodales justo non, vestibulum enim. Integer a
+            varius leo. Vestibulum tempor consequat elit, id pellentesque tortor pulvinar eu. Nunc luctus suscipit ante,
+            ac tempor augue fermentum sed. Aliquam ornare ante ipsum, vulputate elementum arcu hendrerit id. Duis
+            consectetur quis diam id auctor. Nam in leo ac nunc imperdiet vulputate. Phasellus semper feugiat
+            bibendum.</p>
+
+        <p class="lorem">Donec bibendum ex ac orci efficitur, lacinia commodo neque rhoncus. Sed scelerisque aliquet
+            felis at sagittis. Aliquam erat volutpat. Nulla aliquet enim vitae nulla tincidunt gravida. Sed ac rutrum
+            arcu.
+            Pellentesque et condimentum elit. Duis nec velit consectetur, sodales justo non, vestibulum enim. Integer a
+            varius leo. Vestibulum tempor consequat elit, id pellentesque tortor pulvinar eu. Nunc luctus suscipit ante,
+            ac tempor augue fermentum sed. Aliquam ornare ante ipsum, vulputate elementum arcu hendrerit id. Duis
+            consectetur quis diam id auctor. Nam in leo ac nunc imperdiet vulputate. Phasellus semper feugiat
+            bibendum.</p>
+    </main>
+    <div class="footer-pad">
+        <!-- Invisible element, should be at least as big as the footer element itself -->
+    </div>
+</div>
+<footer>This is a "Not so sticky" footer (with a fixed height)</footer>
+<script>
+    function addText() {
+        var lorem = document.getElementsByClassName('lorem')[0];
+        var main = document.getElementById('main-content');
+        var clone = lorem.cloneNode(true);
+        main.appendChild(clone);
+    }
+</script>
+</body>
+</html>
