@@ -2,9 +2,9 @@
 permalink: /devops/
 ---
 
-# Devops
+# DevOps
 
-Code snippets, tools and libraries related Devops. But what is [Devops](https://en.wikipedia.org/wiki/DevOps)...
+Code snippets, tools and libraries related DevOps. But what is [DevOps](https://en.wikipedia.org/wiki/DevOps)...
 
 ## Libraries
 
