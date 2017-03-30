@@ -18,7 +18,7 @@ The motto: minimal amount of code to create the first "sparks".
 
 - [Devops section](devops)
 
-# Build locally
+## Build locally
 
 ```
 bundle exec jekyll serve
