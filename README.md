@@ -12,6 +12,7 @@ The motto: minimal amount of code to create the first "sparks".
 ### CSS Tricks
 
 - *[Not so sticky footer](frontend/css/sticky-footer-small-page.html)*, a footer that is sticky only if the content of the page is smaller than the current display.
+- *[Sticky container with centered container](frontend/css/sticky-footer-vertical-center-container.html)*, variant of the previous one.
 
 ## Devops
 
