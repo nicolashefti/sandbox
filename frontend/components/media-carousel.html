@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+    <style type="text/css">
+        ol.tt-carousel-indicators.tt-carousel-indicators-dots {
+            list-style: none;
+            display: inline-flex;
+            text-align: center;
+            margin: auto;
+            padding: 5px 0;
+        }
+
+        .tt-carousel-indicators li {
+            margin-left: 5px;
+        }
+
+        body {
+            background: #e8e8e8;
+        }
+
+        .container {
+            margin: 0 auto;
+        }
+
+        /* Example wrapper */
+        .wrap {
+            position: relative;
+            margin: 3em 0;
+        }
+
+        /* Frame */
+        .frame {
+            height: 250px;
+            width: 350px;
+            line-height: 250px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .frame ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-size: 50px;
+        }
+
+        .frame ul li {
+            float: left;
+            width: 350px;
+            height: 100%;
+            margin: 0 1px 0 0;
+            padding: 0;
+            background: #333;
+            color: #ddd;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .frame ul li.active {
+            color: #fff;
+            background: #a03232;
+        }
+
+        /* Scrollbar */
+        .scrollbar {
+            margin: 0 0 1em 0;
+            height: 2px;
+            background: #ccc;
+            line-height: 0;
+        }
+
+        .scrollbar .handle {
+            width: 100px;
+            height: 100%;
+            background: #292a33;
+            cursor: pointer;
+        }
+
+        .scrollbar .handle .mousearea {
+            position: absolute;
+            top: -9px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+        }
+
+        /* Pages */
+        .pages {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .pages li {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin: 0 4px;
+            text-indent: -999px;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+        }
+
+        .pages li:hover {
+            background: #aaa;
+        }
+
+        .pages li.active {
+            background: #666;
+        }
+
+        /* Controls */
+        .controls {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        /* One Item Per Frame example*/
+        .oneperframe {
+            height: 300px;
+            line-height: 300px;
+        }
+
+        .oneperframe ul li {
+            width: 1140px;
+        }
+
+        .oneperframe ul li.active {
+            background: #333;
+        }
+
+        /* Crazy example */
+        .crazy ul li:nth-child(2n) {
+            width: 100px;
+            margin: 0 4px 0 20px;
+        }
+
+        .crazy ul li:nth-child(3n) {
+            width: 300px;
+            margin: 0 10px 0 5px;
+        }
+
+        .crazy ul li:nth-child(4n) {
+            width: 400px;
+            margin: 0 30px 0 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="header">Media carousel</h2>
+    <div class="frame" id="basic">
+        <ul class="clearfix">
+            <li>
+                <iframe width="350" height="250" src="https://www.youtube.com/embed/cc0rL7ep078" frameborder="0"
+                        allowfullscreen></iframe>
+            </li>
+            <li>
+                <div id="player"></div>
+            </li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <div class="center-align">
+        <ol class="tt-carousel-indicators tt-carousel-indicators-dots"></ol>
+    </div>
+    <div class="controls">
+        <p class="center-align">
+            <button class="btn prev"><<</button>
+            <button class="btn next">>></button>
+        </p>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="sly.min.js"></script>
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '250',
+            width: '350',
+            videoId: 'M7lc1UVf-VE',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        // event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+        }
+    }
+    function stopVideo() {
+        player.stopVideo();
+    }
+</script>
+<script type="text/javascript">
+    var options = {
+        horizontal: 1,
+
+        // Item based navigation
+        itemNav: 'forceCentered',
+        smart: 1,
+        activateMiddle: 1,
+
+        // Scrolling
+        scrollBy: 0,
+
+        // Dragging
+        elasticBounds: 1,
+        mouseDragging: 0,
+        touchDragging: 1,
+        releaseSwing: 1,
+
+        // Pages bar
+        pagesBar: $('.tt-carousel-indicators'),
+        activatePageOn: 'click',
+
+        // Automated cycling
+        cycleBy: null,
+        cycleInterval: 5000,
+        pauseOnHover: 1,
+        startPaused: true,
+
+        // Mixed options
+        easing: 'swing',
+        speed: 300,
+        startAt: 0,
+
+        // Navigation buttons
+
+        // Buttons
+        prev: $('.container').find('.prev'),
+        next: $('.container').find('.next'),
+    };
+    var frame = new Sly('#basic', options).init();
+</script>
+
+</body>
+</html>
