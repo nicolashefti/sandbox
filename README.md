@@ -6,21 +6,35 @@ The motto: minimal amount of code to create the first "sparks".
 
 ## Frontend
 
+### Libraries
+
 - [RxJS](rxjs)
 - [Github page test](test), playing around with Github page configuration.
+
+### Component
+
 - [Media carousel](frontend/components/media-carousel.html), using Sly, Youtube API and a spoon of material design.
  
 ### CSS Tricks
 
 - *[Not so sticky footer](frontend/css/sticky-footer-small-page.html)*, a footer that is sticky only if the content of the page is smaller than the current display.
-- *[Sticky container with centered container](frontend/css/sticky-footer-vertical-center-container.html)*, variant of the previous one.
+- [Sticky container with centered container](frontend/css/sticky-footer-vertical-center-container.html), variant of the previous one.
+
+## History
+
+I had code snippets all over different computers, on CodePen and various other *fiddle. I finally decided to collect and
+ organize everything in one place. What you see is the result of this work (still in progress, I have to say).
+
+## Backend
+
+- [Go](backend/go)
 
 ## Devops
 
 - [Devops section](devops)
 
-## Build locally
+## Build & run locally
 
-```
+```bash
 bundle exec jekyll serve
 ```
