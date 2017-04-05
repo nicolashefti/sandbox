@@ -1,3 +1,5 @@
+title: Developer sandbox
+description: Minimal amount of code to create the first "sparks".
 theme: jekyll-theme-slate
 
 exclude:

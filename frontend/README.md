@@ -20,3 +20,9 @@ permalink: /frontend/
     - Cons: 
         - limited to ```<table>``` markup. Cannot use with your home-made ```display: table```.
         - no catch/continuous-swipe movement effect
+
+## Resources
+
+- [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+
+Really powerful patterns for better code structure.

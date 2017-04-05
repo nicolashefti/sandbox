@@ -1,15 +1,17 @@
-# Git sandbox
+I had code snippets all over different computers, on CodePen and various other *fiddle. I finally decided to collect and
+ organize everything in one place. What you see is the result of this work (still in progress, I have to say). Have fun
+ exploring my sandbox and all the toys it contains!
 
-My experimenting place.
-
-The motto: minimal amount of code to create the first "sparks".
 
 ## Frontend
+
+UX/UI experimentation, code snippets, tools and [more resources](frontend)
 
 ### Component
 
 - [Media carousel](frontend/components/media-carousel.html), using Sly, Youtube API and a spoon of material design.
-- [Affix navigation](frontend/components/affix-navigation.html), with Bootstrap 3
+- [Affix navigation](frontend/components/affix-navigation.html), using Bootstrap 3
+- [Scroll-spy navigation](frontend/components/scroll-spy-navigation.html), using Bootstrap 3
  
 ### CSS Tricks
 
@@ -35,8 +37,3 @@ The motto: minimal amount of code to create the first "sparks".
 ```bash
 bundle exec jekyll serve
 ```
-
-## History
-
-I had code snippets all over different computers, on CodePen and various other *fiddle. I finally decided to collect and
- organize everything in one place. What you see is the result of this work (still in progress, I have to say).
