@@ -4,7 +4,83 @@
     <meta charset="UTF-8">
     <title>Sticky container</title>
 </head>
-<body>
+<style>
+    /* Layout */
+    body {
+        background-color: #ebebeb;
+    }
 
+    .main-container {
+        background: white;
+        border-radius: 5px;
+        height: 2000px;
+        margin: 100px auto;
+        max-width: 960px;
+        padding: 0px;
+        position: relative;
+    }
+
+    .sticky {
+        height: 150px;
+        background: #ebebeb;
+        border: 1px solid #2c2c2c;
+        width: 100%;
+    }
+
+    .sticky-blocker {
+        background: blue;
+        height: 150px;
+        position: absolute;
+        top: 1000px;
+        width: 100%;
+    }
+
+    .sticky-bottom {
+        position: absolute;
+        bottom: 0;
+    }
+
+</style>
+<body>
+<div class="main-container">
+    <div class="sticky sticky-top">
+        <p>I'm sticky top</p>
+    </div>
+    <div id="blocker" class="sticky-blocker">
+
+    </div>
+    <!--<div class="sticky sticky-bottom">-->
+    <!--<p>I'm sticky bottom</p>-->
+    <!--</div>-->
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $.fn.stickyContainer = function () {
+        this.each(function () {
+            console.log('New sticky container', this);
+
+            var _this = this;
+            var startPosition = $(this).offset().top;
+            $(window).on('scroll.sticky', function () {
+                var clone;
+
+                if ($(window).scrollTop() > startPosition) {
+                    console.log('Under');
+//                    clone = $(_this)
+//                        .clone();
+//                        .appendTo('body')
+//                        .css('background', 'red')
+//                        .css('position', 'fixed')
+//                        .css('top', 0);
+                } else {
+//                    console.log(clone);
+//                    clone.remove();
+                }
+            });
+        });
+    };
+
+    $('.sticky').stickyContainer();
+</script>
 </body>
 </html>
