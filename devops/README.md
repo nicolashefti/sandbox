@@ -16,4 +16,4 @@ Zipkin is a distributed tracing system. It helps gather timing data needed to tr
 
 ### Git
 
-[Ih, shit, git!](http://ohshitgit.com/), helpful command when you screwed with Git.
+[Oh, shit, git!](http://ohshitgit.com/), helpful commands when you screwed with Git.
