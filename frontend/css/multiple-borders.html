@@ -1,0 +1,72 @@
+---
+title: Multiple borders
+---
+
+<style>
+    .borders {
+        background: white;
+        border-radius: 5px;
+        position: relative;
+        border: 3px red solid;
+    }
+
+    .borders:after {
+        content: "";
+        background: blue;
+        border-radius: 5px;
+        position: absolute;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+        top: -10px;
+        z-index: -1;
+    }
+
+    .outline {
+        background: white;
+        border-radius: 5px;
+        position: relative;
+        border: 3px yellowgreen solid;
+        outline: 3px green solid;
+    }
+
+    input {
+        border: solid 1px #f06d06;
+        padding: 5px;
+        height: 1.5em;
+        border-radius: 4px;
+        background-clip: content-box;
+        background-color: white;
+        line-height: 1.5;
+        font-size: 20px;
+        text-indent: 0.5rem;
+    }
+</style>
+
+<h2>Using pseudo-elements</h2>
+
+<div class="borders" style="height: 100px; width: 200px">
+
+</div>
+
+<p>Does not work on input fields. Example:</p>
+
+<input class="borders" placeholder="I'am an input field">
+
+<p>Pseudo-elements can only be defined (or better said are only supported) on container elements. Because the way they
+    are rendered is within the container itself as a child element. input can not contain other elements hence they're
+    not supported. A button on the other hand that's also a form element supports them, because it's a container of
+    other sub-elements.</p>
+
+<h2>Using outline</h2>
+
+<div class="outline" style="height: 100px; width: 200px"></div>
+
+<p>Problem: outline does not have a standard radius property.</p>
+
+<h2>Resources</h2>
+
+<p><a href="https://css-tricks.com/snippets/css/multiple-borders/">Multiple Borders</a> on CSS Tricks</p>
+
+<p><a href="http://stackoverflow.com/questions/2587669/can-i-use-the-after-pseudo-element-on-an-input-field#4660434">
+    Pseudo-elements on non-container</a> (StackOverflow)</p>

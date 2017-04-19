@@ -17,6 +17,7 @@ UX/UI experimentation, code snippets, tools and [more resources](frontend)
 
 - *[Not so sticky footer](frontend/css/sticky-footer-small-page.html)*, a footer that is sticky only if the content of the page is smaller than the current display.
 - [Sticky container with centered container](frontend/css/sticky-footer-vertical-center-container.html), variant of the previous one.
+- [Multiple borders elements](frontend/css/multiple-borders.html), add more than one border on an element using pseudo-classes.
 
 ### Libraries
 
