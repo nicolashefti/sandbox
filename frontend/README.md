@@ -11,7 +11,8 @@ permalink: /frontend/
 - [Sly](http://darsa.in/sly/)
 - [Swipe](https://github.com/thebird/Swipe), Swipe is the most accurate touch slider. 
     - Pros: lightweight, no jQuery dep
-    - Cons: missing some unit/e2e tests
+    - Cons: missing some unit/e2e tests, not Github activity since Setp. 2015, 77 open PR, ...
+- [Flickity](https://github.com/metafizzy/flickity)
 
 ### Responsive table
 
