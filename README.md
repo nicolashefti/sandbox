@@ -21,8 +21,9 @@ UX/UI experimentation, code snippets, tools and [more resources](frontend)
 
 ### Libraries
 
-- [RxJS](rxjs)
 - [Github page test](test), playing around with Github page configuration.
+- [Redux](frontend/libraries/redux)
+- [RxJS](rxjs)
 
 
 ## Backend
