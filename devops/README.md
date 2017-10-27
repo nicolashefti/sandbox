@@ -17,3 +17,6 @@ Zipkin is a distributed tracing system. It helps gather timing data needed to tr
 ### Git
 
 [Oh, shit, git!](http://ohshitgit.com/), helpful commands when you screwed with Git.
+
+[OneFlow](http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow), a Git branching model and workflow
+
