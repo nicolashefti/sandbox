@@ -34,6 +34,10 @@ UX/UI experimentation, code snippets, tools and [more resources](frontend)
 
 - [Devops section](devops)
 
+## Cheat sheets
+
+- [vim](https://vim.rtorr.com/)
+
 ## Build & run locally
 
 ```bash
