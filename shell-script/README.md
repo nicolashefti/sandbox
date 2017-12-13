@@ -1,8 +1,9 @@
 # Script snippets for daily-coding life
 
-- wherearewe.sh, make a script self aware of where it stands
+Get absolute path in which the script resides
 
-### Find and delete
+    SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    echo "We are here in: $SCRIPTDIR"
 
 Delete files older than 10 days
 
