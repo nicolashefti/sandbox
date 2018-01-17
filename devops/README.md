@@ -14,6 +14,10 @@ Zipkin is a distributed tracing system. It helps gather timing data needed to tr
 
 ## Resources
 
+### Cron
+
+[A crontab rule editor](https://crontab.guru)
+
 ### Git
 
 [Oh, shit, git!](http://ohshitgit.com/), helpful commands when you screwed with Git.
