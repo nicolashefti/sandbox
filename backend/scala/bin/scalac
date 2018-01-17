@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+workdir=$( cd "$( dirname "${BASH_SOURCE[0]}" )/../" && pwd )
+
+cmd=$@
+
+if [ ! "" = "$cmd" ]; then
+  cmd="scalac $cmd"
+fi
+
+docker run --rm --tty --interactive --volume "$workdir:/app" bigtruedata/scala $cmd

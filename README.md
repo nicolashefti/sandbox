@@ -28,7 +28,8 @@ UX/UI experimentation, code snippets, tools and [more resources](frontend)
 ## Backend
 
 - [Backend](backend) 
-    - [Go](backend/go)
+    - [Go](backend/golang)
+    - [Scala](backend/scala)
 
 ## Devops
 
