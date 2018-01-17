@@ -1,5 +1,5 @@
 ---
-permalink: /backend/go
+permalink: /backend/golang
 ---
 
 # Golang starter kit
