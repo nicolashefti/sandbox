@@ -24,3 +24,4 @@ Zipkin is a distributed tracing system. It helps gather timing data needed to tr
 
 [OneFlow](http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow), a Git branching model and workflow. Simplier, yet powerful alternative to Gitflow.
 
+[Alias de l'extrème](https://www.synbioz.com/blog/les_aliases_git_de_l_extreme), dark aliases for advanced git users!
